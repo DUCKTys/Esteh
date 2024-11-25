@@ -58,12 +58,11 @@ handler.all = async function (m) {
 			externalAdReply: {
 				showAdAttribution: true,
 				title: global.ucapan,
-				body: '® Ely-MD By Arasea',
+				body: 'Ｚｅｒｏ Ｏｎｅ Ｂｅｔａ +',
 				mediaUrl: db.data.datas.linkgc,
-				description: '® Ely-MD By Arasea',
+				description: 'Ｚｅｒｏ Ｏｎｅ Ｂｅｔａ +',
 				previewType: "PHOTO",
-				thumbnailUrl: 'https://raw.githubusercontent.com/arasea2/elydb/main/ely/pp.jpg',
-				sourceUrl: 'https://trakteer.id/arasea',
+				thumbnailUrl: 'https://b.top4top.io/p_3222jsczz1.jpg',
 			}
 		}
 	}
@@ -75,7 +74,7 @@ handler.all = async function (m) {
 				h: 'Hmm',
 				seconds: '12345',
 				caption: timeh,
-				jpegThumbnail: fs.readFileSync('./media/thumbnail.jpg')
+				jpegThumbnail: fs.readFileSync('./media/menu.jpg')
 			}
 		},
 		...extras
@@ -86,7 +85,7 @@ handler.all = async function (m) {
 			liveLocationMessage: {
 				caption: pauthor, // title: pauthor, // see the differences
 				h: timeh,
-				jpegThumbnail: fs.readFileSync('./media/thumbnail.jpg')
+				jpegThumbnail: fs.readFileSync('./media/menu.jpg')
 			}
 		},
 		...extras
@@ -96,7 +95,7 @@ handler.all = async function (m) {
 		key, message: {
 			documentMessage: {
 				title: pauthor,
-				jpegThumbnail: fs.readFileSync('./media/thumbnail.jpg')
+				jpegThumbnail: fs.readFileSync('./media/menu.jpg')
 			}
 		},
 		...extras
@@ -110,7 +109,7 @@ handler.all = async function (m) {
 				seconds: '999999999',
 				gifPlayback: 'true',
 				caption: timeh,
-				jpegThumbnail: fs.readFileSync('./media/thumbnail.jpg')
+				jpegThumbnail: fs.readFileSync('./media/menu.jpg')
 			}
 		},
 		...extras
@@ -138,7 +137,7 @@ handler.all = async function (m) {
 				//surface : 1,
 				message: pauthor,
 				//orderTitle: `anulah`,
-				thumbnail: fs.readFileSync('./media/anime.jpg'),
+				thumbnail: fs.readFileSync('./media/menu.jpg'),
 				sellerJid: nol
 			}
 		},
@@ -151,7 +150,7 @@ handler.all = async function (m) {
 				product: {
 					productImage: {
 						mimetype: 'image/jpeg',
-						jpegThumbnail: fs.readFileSync('./media/thumbnail.jpg')
+						jpegThumbnail: fs.readFileSync('./media/menu.jpg')
 					},
 					title: pauthor,
 					description: timeh,

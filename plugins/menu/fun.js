@@ -6,19 +6,19 @@ import { join } from 'path'
 import fs from 'fs'
 
 let tagsfun = {
-	'rpg': '🎮 *RPG*',
-	'game': '🎮 *GAMES*',
-	'anonim': '🎩 *ANONYMOUS*',
-	'memfess': '📨 *MEMFESS*',
-	'kerang': '🐚 *KERANG AJAIB*',
+	'rpg': '*Ｒｐｇ*',
+	'game': '*Ｇａｍｅｓ*',
+	'anonim': '*Ａｎｏｎｙｍｏｕｓ*',
+	'memfess': '*Ｍｅｍｆｅｓｓ*',
+	'kerang': '*Ｋｅｒａｎｇ Ａｊａｉｂ*',
 }
 const defaultMenu = {
 	before: `
-━ ━ *[ 🦠 FUN MENU ]* ━ ━
+━ ━ *[ Ｆｕｎ Ｍｅｎｕ ]* ━ ━
 `.trimStart(),
-	header: '╭─「 %category 」',
-	body: '│ • %cmd',
-	footer: '╰────\n',
+	header: '> ─「 %category 」',
+	body: '│ □ %cmd',
+	footer: '> ────\n',
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
 	try {
@@ -63,13 +63,13 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
 		}
 		text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
 		const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
-		await conn.sendFThumb(m.chat, db.data.datas.maingroupname, text.replace(`build [item] [count]`, `build [item] [count]${readMore}`).trim(), nais, db.data.datas.linkgc, m)
+		await conn.sendMessage(m.chat, {text: text}, m)
 	} catch (e) {
 		console.log(e)
 	}
 }
 
-handler.help = ['*menufun*']
+handler.help = ['menufun']
 handler.tags = ['submenu']
 handler.command = /^((fun|rpg|games?)m(enu)?|m(enu)?(fun|rpg|games?))$/i
 

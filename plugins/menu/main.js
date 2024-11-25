@@ -8,36 +8,25 @@ import { join } from 'path'
 import os from 'os'
 
 let tags = {
-	'submenu': '🎪 *SUB MENU*',
-	'searching': '🔎 *SEARCHING*',
-	'information': '🤖 *INFORMATION*',
-	'entertainment': '🎡 *ENTERTAINMENT*',
-	'primbon': '🎆 *PRIMBON*',
-	'creator': '🖱💻 *CREATOR*',
-	'tools': '✏️ *TOOLS MENU*',
-	'tempmail': '✉️ *TEMPMAIL*'
+	'submenu': '*Ｏｔｈｅｒ Ｍｅｎｕ*',
+	'searching': '*Ｓｅａｒｃｈｉｎｇ*',
+	'information': '*Ｉｎｆｏｒｍａｔｉｏｎ*',
+	'primbon': '*Ｓｔｒｅｓ*',
+	'creator': '*Ｓｔｉｃｋｅｒ*',
+	'tools': '*Ｔｏｏｌｓ*',
+	'new': '*Ｎｅｗ Ｆｉｔｕｒ*'
 }
 
 const defaultMenu = {
 	before: `
-╔═══ *「 %me 」* 
-║⧐ ⸨ *.owner* ⸩
-║⧐ ⸨ *.info* ⸩
-║⧐ ⸨ *.levelup* ⸩
-║⧐ ⸨ *.claimlimit* ⸩
-╠════════════❍
-║⧐ 📈 Runtime : *%uptime*
-║⧐ 📈 OS Uptime : *%osuptime*
-╚════════════════
-
-╭───「 *PROFILMU* 」
+╭───「 *%uptime* 」
 ├ • Nama  : %name!
 ├ • Role : *%role*
 ├ • Limit : *%limit*
 ╰───────────── %readmore`.trimStart(),
-	header: '╭─「 %category 」',
-	body: '│ • %cmd',
-	footer: '╰────\n',
+	header: '> ─「 %category 」',
+	body: '│ □ _*%cmd*_',
+	footer: '> ────\n',
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname, command, isPrems }) => {
 	try {
@@ -95,7 +84,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, command, isPrems }) =
 		}
 		text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
 		//list button not shown on ios
-		if (!/all/.test(command) && await getDevice(m.key.id) == 'android') {
+		/**if (!/all/.test(command) && await getDevice(m.key.id) == 'android') {
 			const txtList = `⦿ 🧱 Limit : *${isPrems ? '~ Infinity ~' : limit}*\n⦿ 🦸🏼‍♂️ Role : *${role}*\n⦿ 🔼 Level : *${level}* (${exp - min} / ${xp})\n⦿ 💵 Money : *${money}*\n⦿ 💫 Total XP : ${exp} ✨\n\n⦿ 📊 Database : ${Object.keys(db.data.users).length} User\n⦿ 📈 Runtime : *${uptime}*`
 			const sections = [
 				[
@@ -123,7 +112,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, command, isPrems }) =
 				], 'Special Feature']
 			]
 			await conn.sendList(m.chat, 'Hello '+name, txtList, pauthor, 'LIST MENU', '', sections, m)
-		} else await conn.sendFThumb(m.chat, db.data.datas.maingroupname, text.trim(), nais, db.data.datas.linkgc, m)
+		} else**/ await conn.sendMessage(m.chat, {text: text}, m)
 	} catch (e) {
 		console.log(e)
 	}
